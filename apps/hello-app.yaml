@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: hello-app
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: {}
+  project: default
+  destination:
+    namespace: hello-app
+    server: https://kubernetes.default.svc
+  source:
+    path: hello-app/overlays/prod
+    repoURL: https://github.com/arnaud-mey/ah-argo.git
+    targetRevision: HEAD
