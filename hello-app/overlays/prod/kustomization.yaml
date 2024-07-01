@@ -4,4 +4,4 @@ resources:
   - ../../base
 images:
   - name: 058264537240.dkr.ecr.eu-central-1.amazonaws.com/hello-app
-    newTag: 85bd4b796179c765c3198ea726357e5899462b10
+    newTag: e2b67819cfc2b3a56c2bed789ea316fe9a16053e
